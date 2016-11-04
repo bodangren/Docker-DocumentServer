@@ -2,6 +2,9 @@ FROM babim/ubuntubase:14.04.ssh
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive
 
+ADD font.tar.gz /font.tar.gz
+RUN tar -xzvpf /font.tar.gz -C /usr/share/fonts/truetype/ && rm -f /font.tar.gz
+
 RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     apt-get -y update && \
     apt-get --force-yes -yq install wget apt-transport-https && \
