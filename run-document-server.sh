@@ -208,6 +208,7 @@ fi
 
 # nginx used as a proxy, and as data container status service.
 # it run in all cases.
+service ssh start
 service nginx start
 
 # Regenerate the fonts list and the fonts thumbnails
