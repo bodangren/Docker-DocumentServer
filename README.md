@@ -1,4 +1,4 @@
-## babim/onlyoffice-document-server without mysql-server
+## babim/onlyoffice-document-server
 
 * [Overview](#overview)
 * [Functionality](#functionality)
