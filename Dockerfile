@@ -1,5 +1,4 @@
-FROM ubuntu:14.04
-MAINTAINER Ascensio System SIA <support@onlyoffice.com>
+FROM babim/ubuntubase:14.04
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive
 
