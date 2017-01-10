@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "`ls /usr/share/fonts --hide='lost+found'`" ]
+then
+	cp -R /font-start/* /usr/share/fonts/
+fi
+
 APP_DIR="/var/www/onlyoffice/documentserver"
 DATA_DIR="/var/www/onlyoffice/Data"
 LOG_DIR="/var/log/onlyoffice/documentserver"
