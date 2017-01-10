@@ -23,7 +23,8 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     rm -rf /var/lib/apt/lists/*
 
 ADD font.7z /font.7z
-RUN cd /usr/share/fonts/truetype/ && 7z x /font.7z -y && rm -f /font.7z
+RUN cd /usr/share/fonts/truetype/ && 7z x /font.7z -y && rm -f /font.7z \
+    && mv /usr/share/fonts /font-start
 
 ADD config /app/onlyoffice/setup/config/
 ADD run-document-server.sh /app/onlyoffice/run-document-server.sh
