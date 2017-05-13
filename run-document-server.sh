@@ -4,7 +4,6 @@ if [ -z "`ls /usr/share/fonts --hide='lost+found'`" ]
 then
 	cp -R /font-start/* /usr/share/fonts/
 fi
-#!/bin/bash
 
 APP_DIR="/var/www/onlyoffice/documentserver"
 DATA_DIR="/var/www/onlyoffice/Data"
