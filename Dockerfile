@@ -22,8 +22,20 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     service nginx stop && \
     rm -rf /var/lib/apt/lists/*
 
-ADD font.7z /font.7z
-RUN cd /usr/share/fonts/truetype/ && 7z x /font.7z -y && rm -f /font.7z \
+ADD font1.7z /font1.7z
+RUN cd /usr/share/fonts/truetype/ && 7z x /font1.7z -y && rm -f /font1.7z \
+    && mv /usr/share/fonts /font-start && ln -sf /font-start /usr/share/fonts
+
+ADD font2.7z /font2.7z
+RUN cd /usr/share/fonts/truetype/ && 7z x /font2.7z -y && rm -f /font2.7z \
+    && mv /usr/share/fonts /font-start && ln -sf /font-start /usr/share/fonts
+
+ADD font3.7z /font3.7z
+RUN cd /usr/share/fonts/truetype/ && 7z x /font3.7z -y && rm -f /font3.7z \
+    && mv /usr/share/fonts /font-start && ln -sf /font-start /usr/share/fonts
+
+ADD font4.7z /font4.7z
+RUN cd /usr/share/fonts/truetype/ && 7z x /font4.7z -y && rm -f /font4.7z \
     && mv /usr/share/fonts /font-start && ln -sf /font-start /usr/share/fonts
 
 ADD config /app/onlyoffice/setup/config/
