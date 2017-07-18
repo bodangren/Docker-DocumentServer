@@ -24,7 +24,7 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     apt-get -y update && \
     apt-get --force-yes -yq install wget apt-transport-https curl p7zip-full && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D9D0BF019CC8AC0D && \
-    echo "deb http://archive.ubuntu.com/ubuntu precise main universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb http://archive.ubuntu.com/ubuntu xenial main universe multiverse" >> /etc/apt/sources.list && \
     locale-gen en_US.UTF-8 && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get -y update && \
@@ -36,7 +36,6 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
     service postgresql stop && \
     service redis-server stop && \
     service rabbitmq-server stop && \
-    service supervisor stop && \
     service nginx stop && \
     rm -rf /var/lib/apt/lists/*
 
@@ -59,7 +58,7 @@ RUN cd /usr/share/fonts/truetype/ && 7z x /font4.7z -y && rm -f /font4.7z \
 ADD config /app/onlyoffice/setup/config/
 ADD run-document-server.sh /app/onlyoffice/run-document-server.sh
 
-EXPOSE 80 443
+EXPOSE 80
 
 ARG REPO_URL="deb http://download.onlyoffice.com/repo/debian squeeze main"
 ARG PRODUCT_NAME=onlyoffice-documentserver
