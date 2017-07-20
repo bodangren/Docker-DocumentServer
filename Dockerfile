@@ -1,4 +1,4 @@
-FROM bodangren:docker-ubuntubase
+FROM bodangren/docker-ubuntubase
 
 RUN  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
 	apt-get update && apt-get install -y \
